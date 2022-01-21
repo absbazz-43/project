@@ -1,0 +1,20 @@
+---
+output:
+  bookdown::pdf_book:
+    toc_depth: 2
+    fig_height : 5
+    fig_width : 8
+    citation_package: natbib
+    includes:
+      before_body: ty.txt
+documentclass: book     
+bibliography: reference.bib
+csl: ama.csl
+geometry: [top=1.5in, bottom=1.5in, right=1in, left=1in]
+linestretch: 1
+fontsize: 11pt
+---
+```{r}
+getwd()
+```
+
