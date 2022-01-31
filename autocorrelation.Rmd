@@ -1,0 +1,31 @@
+---
+title: "autocorrelation"
+author: "bazzX496"
+date: "1/31/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
+```
+
+
+```{r}
+
+autocor=function(set,initial,iteration_no ,error,phi)
+{
+set.seed(set)
+yt=c()
+x=initial
+n=iteration_no
+error=rnorm(n)
+for(i in 1:n){
+  yt[i]=phi*x+error[i]
+  x=yt[i]
+}
+return(list(dat=data.frame(now=yt,errors=error),plot(yt,type = "h"),abline(h=0)))
+
+}
+autocor(100,0,20,100,.5)
+```
+
